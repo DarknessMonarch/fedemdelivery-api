@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #11191fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .thank-you-message {
+            background-color: #f9f9f9;
+            border-left: 4px solid #c3f402ff;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .content-foot {
+            margin-top: 20px;
+            text-align: right;
+            color: #11191fff;
+        }
+
+        .footer {
+            background-color: #11191fff;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+
+        .team-signature {
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="logo"
+                src="https://raw.githubusercontent.com/DarknessMonarch/Fedemdelivery/refs/heads/master/public/assets/logo.png"
+                alt="Fedemdelivery logo">
+        </div>
+
+        <div class="content">
+            <div class="thank-you-message">
+                <p>Hello {{username}},</p>
+                <p>Thank you for choosing Fedemdelivery as your preferred logistics and shipment company. We appreciate your trust and are committed to providing you with the highest quality service.</p>
+            </div>
+
+            <div class="content-foot">
+                <p>Best regards,<br>
+                <span class="team-signature">Fedemdelivery Team</span></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Email: fedemdeliveryxpresscourier@gmail.com</p>
+            <p>You are receiving this email as part of our customer communication.</p>
+            <p>Copyright (C) 2024 Fedemdelivery.com All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

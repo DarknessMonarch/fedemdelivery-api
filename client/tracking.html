@@ -1,0 +1,170 @@
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    background-color: #f4f4f4;
+                    margin: 0;
+                    padding: 20px;
+                    line-height: 1.6;
+                }
+        
+                .container {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    background-color: #ffffff;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    overflow: hidden;
+                }
+        
+                .header {
+                    background-color: #11191fff;
+                    padding: 15px;
+                    text-align: center;
+                }
+        
+                .logo {
+                    max-width: 200px;
+                    height: auto;
+                }
+        
+                .tracking-content {
+                    padding: 20px;
+                }
+        
+                .tracking-details {
+                    background-color: #f9f9f9;
+                    border-radius: 5px;
+                    padding: 15px;
+                    margin-bottom: 15px;
+                }
+        
+                .tracking-details table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+        
+                .tracking-details th, 
+                .tracking-details td {
+                    padding: 8px;
+                    text-align: left;
+                    border-bottom: 1px solid #e0e0e0;
+                }
+        
+                .tracking-details th {
+                    background-color: #11191fff;
+                    color: #ffffff;
+                }
+        
+                .tracking-id-row {
+                    font-weight: bold;
+                    background-color: #c3f402ff;
+                }
+        
+                .track-button {
+                    text-align: center;
+                    margin: 20px 0;
+                }
+        
+                .linkBtn {
+                    display: inline-block;
+                    background-color: #c3f402ff;
+                    color: #11191fff;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    transition: background-color 0.3s ease;
+                }
+        
+                .linkBtn:hover {
+                    background-color: #ccf527;
+                }
+
+                .copy-button {
+                    cursor: pointer;
+                }
+        
+                .footer {
+                    background-color: #11191fff;
+                    color: #ffffff;
+                    text-align: center;
+                    padding: 15px;
+                    font-size: 0.9em;
+                }
+            </style>
+        </head>
+        
+        <body>
+            <div class="container">
+                <div class="header">
+                    <img class="logo"
+                        src="https://raw.githubusercontent.com/DarknessMonarch/Fedemdelivery/refs/heads/master/public/assets/logo.png"
+                        alt="Fedemdelivery logo">
+                </div>
+
+                <div class="tracking-content">
+                    <h2>Shipment Tracking Details with TrackingID</h2>
+                    <p>Hello {{username}}, your tracking shipment details:</p>
+                    
+                    <div class="tracking-details">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                             
+                                <tr>
+                                    <td>Country to</td>
+                                    <td>{{country}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Shipment Weight</td>
+                                    <td>{{weight}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Shipment Type</td>
+                                    <td>{{shipmentType}}</td>
+                                </tr>
+                                <div class="tracking-id-row">
+                                    <td>Tracking ID</td>
+                                    <td id="trackingId">{{trackingId}}</td>
+                                </div>
+                                <p>Click to copy or manually copy the tracking ID above: <strong>{{trackingId}}</strong></p>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+               <div class="copy-button">
+                        <button id="copyButton" class="linkBtn" onclick="copyTrackingId()">Copy Tracking ID</button>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <p>Email: fedemdeliveryxpresscourier@gmail.com</p>
+                    <p>&copy; 2024 Fedemdelivery.com All rights reserved.</p>
+                </div>
+            </div>
+            <script>
+                function copyTrackingId() {
+                    const trackingId = document.getElementById('trackingId').textContent;
+                    navigator.clipboard.writeText(trackingId).then(() => {
+                        const copyButton = document.getElementById('copyButton');
+                        copyButton.textContent = 'Copied!';
+                        setTimeout(() => {
+                            copyButton.textContent = 'Copy Tracking ID';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy tracking ID: ', err);
+                    });
+                }
+            </script>
+        </body>
+    </html>

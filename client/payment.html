@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 20px;
+                line-height: 1.6;
+            }
+    
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+            }
+    
+            .header {
+                background-color: #11191fff;
+                padding: 15px;
+                text-align: center;
+            }
+    
+            .logo {
+                max-width: 200px;
+                height: auto;
+            }
+    
+            .receipt-content {
+                padding: 20px;
+            }
+    
+            .receipt-details {
+                background-color: #f9f9f9;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+    
+            .receipt-details table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+    
+            .receipt-details th, 
+            .receipt-details td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #e0e0e0;
+            }
+    
+            .receipt-details th {
+                background-color: #11191fff;
+                color: #ffffff;
+            }
+    
+            .total-row {
+                font-weight: bold;
+                background-color: #c3f402ff;
+            }
+    
+            .payment-button {
+                text-align: center;
+                margin: 20px 0;
+            }
+    
+            .linkBtn {
+                display: inline-block;
+                background-color: #c3f402ff;
+                color: #11191fff;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+    
+            .linkBtn:hover {
+                background-color: #ccf527;
+            }
+    
+            .footer {
+                background-color: #11191fff;
+                color: #ffffff;
+                text-align: center;
+                padding: 15px;
+                font-size: 0.9em;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="header">
+                <img class="logo"
+                    src="https://raw.githubusercontent.com/DarknessMonarch/Fedemdelivery/refs/heads/master/public/assets/logo.png"
+                    alt="Fedemdelivery logo">
+            </div>
+
+            <div class="receipt-content">
+                <h2>Shipment Payment Request</h2>
+                <p>Hello {{username}}, this are the details of my shipment below:</p>
+                
+                <div class="receipt-details">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Country</td>
+                                <td>{{country}}</td>
+                            </tr>
+                            <tr>
+                                <td>Shipment Weight</td>
+                                <td>{{weight}}</td>
+                            </tr>
+                            <tr>
+                                <td>Shipment Type</td>
+                                <td>{{shipmentType}}</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>Total Price</td>
+                                <td>{{totalPrice}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Email: fedemdeliveryxpresscourier@gmail.com</p>
+                <p>&copy; 2024 Fedemdelivery.com All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>
